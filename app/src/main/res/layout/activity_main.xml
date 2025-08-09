@@ -2,22 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Enter first number" />
+
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="Enter second number"
+        android:layout_marginTop="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/subtractBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/multiplyBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="×"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/divideBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="÷"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
-        android:text="Hello World!"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/button"
-        android:text="Click Me"
-        android:layout_width="wrap_content"
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:text="Result will appear here"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp" />
 
 </LinearLayout>
