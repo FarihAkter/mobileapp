@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var subtractBtn: Button
     private lateinit var multiplyBtn: Button
     private lateinit var divideBtn: Button
+    private lateinit var percentBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         subtractBtn = findViewById(R.id.subtractBtn)
         multiplyBtn = findViewById(R.id.multiplyBtn)
         divideBtn = findViewById(R.id.divideBtn)
+        percentBtn = findViewById(R.id.percentBtn)
 
         addBtn.setOnClickListener {
             performOperation(Operation.ADD)
@@ -43,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
         divideBtn.setOnClickListener {
             performOperation(Operation.DIVIDE)
+        }
+
+        percentBtn.setOnClickListener {
+            performOperation(Operation.PERCENT)
         }
     }
 
@@ -75,12 +81,17 @@ class MainActivity : AppCompatActivity() {
                     num1 / num2
                 }
             }
+            Operation.PERCENT -> {
+                // Calculate num1 percent of num2, for example:
+                // if num1=20 and num2=50, result = (20/100)*50 = 10
+                (num1 / 100) * num2
+            }
         }
 
         resultText.text = "Result: $result"
     }
 
     enum class Operation {
-        ADD, SUBTRACT, MULTIPLY, DIVIDE
+        ADD, SUBTRACT, MULTIPLY, DIVIDE, PERCENT
     }
 }
