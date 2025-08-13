@@ -8,10 +8,10 @@
 
     <EditText
         android:id="@+id/number1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="Enter first number" />
+        android:hint="Enter first number"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/number2"
